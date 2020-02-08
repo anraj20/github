@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title></title>
+        <style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+ .back{
+background: url("data:image/jpeg;base64,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") no-repeat center ; 
+              
+  background-size:cover;
+}
+.box{
+   display:inline-block;
+   width:50%;
+   float:left;
+}
+.list-box{
+width:100%;
+overflow:hidden;
+font-size:18px;
+}
+    
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 2px 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 2px 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+
+
+            .banner-image{ padding-top: 65px;    
+              padding-bottom: 60px; 
+              text-align: center;     
+              color: #f8f8f8; 
+              background: url("https://lh3.googleusercontent.com/6AZ0wWDwQutC0hEQU2Ql3c6RHQ7ObTtkn9bo8ifPS_xQyRSWf5n6VWRj65jsxjea6MGqc5GOD-GjqqD2wzioIwaM3D2opUstxO2_ESp3En-nNaeDEyNZAKewxRqeKozCYPte_rbc691LcRDbgu18rI5a0ZV01ppmp4dxQDG7CLW563IhT9-2_YFRxei0DCYf4tGx-U5HLLc0yQUnnGZaYDS5jP6Wxr9pIUHmQXPtoPoNxeoprs6ruPRMPprt1MrYQ07FY7RBhVKTDM7Qc1I1DbXvnE6-6oZZgTvMpIvoxL-MbiwDCRmLyeJPe4goUge9RWwhRppx5ieirG9Qu7vayB56Awts2EW8ao8etYdXJfaCLo6M4FCqgo7y0L2Mbf0f1hCCyTJceCRJH-b8kjlD0uXmigtDSzUTC_5slVXyqK6Bj7sKDaFw1Z1lFehHTwN_3j2V8mkQFxqqdGcouZzfrhASw3xucey38wT6Q8K7SyZIY4vGnPWGnKXTSGn2vm0WjUs4yjDN5fkuB-LwbXikkeVurMujSSwbTMKxPZ_bZ2DxNRf1giBp789ft44pqSd5GJcCFJ0Y0PcipjizXy0-OcW8GwvVbnba-cdoWuQJ9iIh2EGoHKVtrQZaC8O3Z9KctYX0ZmGE4piIo5Lei7PJE9wjv8XnlIe36GIC7Mgvh4_3kaPP0BnYJJxUdNdQOrYeX-YVGROgVBbRRFCalDRfYx6Keu7ntE0TX8bNt5kbUf6PWOQ=w1168-h657-no") no-repeat center ; 
+              background-size: 100% 100%S;
+              
+}
+
+.banner-content{
+    position:relative; 
+    padding-top: 6%; 
+    padding-bottom: 6%; 
+    margin-top: 12%; 
+    margin-bottom: 12%; 
+    background-color:rgba(0,0,0,0.7); 
+    max-width: 660px;
+    overflow: hidden;
+    
+}
+footer{padding: 10px 0; 
+       background-color: #101010; 
+       color:#9d9d9d; 
+       position:fixed;
+       bottom: 0; 
+       width: 100%; }
+.row_style{margin-top: 70px;
+}
+ h2{font-weight: bolder; 
+ }
+ .jumbotron_style{margin-top: 70px;
+ }
+ .table_style{margin-top: 80px;
+ }
+  h4{font-weight: bolder;
+  }
+ .container_style{margin-top: 80px;
+.thumbnail{
+
+height:auto;
+padding:8px;
+margin bottom:20px;
+background color:#fff;
+border:1px solid #a4a4a4;
+text-align:center;
+color:#666;
+margin:50px;
+ }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+li a.active {
+  color: white;
+  background-color: #4CAF50;
+}
+       </style>
+
+        </head>
+    <body>
+
+
+        <nav class="navbar  navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+                <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+            </button>
+
+             <logo>
+                    <a class="navbar-brand">
+                        <img src="https://static.wixstatic.com/media/625211_d6c6de1e2c93485ea83dc8c0a50dab38~mv2.png/v1/fill/w_60,h_66,al_c,q_85,usm_0.66_1.00_0.01/625211_d6c6de1e2c93485ea83dc8c0a50dab38~mv2.webp" style="width:60px; height:50px;">
+                    </a>
+                </logo>
+    </div>
+        <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="nav navbar-nav navbar-right">
+                
+<li><a class="active" href="#home">Home</a></li>
+ 
+<li><a href="#about">About</a></li> <li><a href="#activities">Activities</a></li>
+  <li><a href="#contact">Contact</a></li>
+  
+                <li><a href="" ><span class="glyphicon glyphicon-log-in">Login</span></a></li>
+            </ul>
+        </div>
+    </div>>
+</nav>
+        <div class="banner-image">
+            <div class="container">
+                <div class="banner-content"><center><h1>Learning Space Foundation</h1><p>Transforming Lives Through Awareness</p></center>
+                    <a href="" class="btn btn-danger btn-lg active">Donate Now</a>
+                </div>
+                </div>
+        </div>
+
+<div class="back">
+<div class="list-box">
+<div class="box">
+<center><h2><b>VISION</b></h2></center>
+<p>Learning Space envisions a world where all young people stay healthy,treat <br>each other and  the environment with respect, dignity, become responsible <br>and fulfilled members of the society and live in peace and harmony. </p>
+</div>
+
+<div class="box">
+<center><h2><b>MISION</b></h2></center>
+<p> To empower children and youth by building necessary skills that help them to be safe, happy and healthy.
+To develop, promote and encourage uplifting social and educational processes for students and teachers. </p> 
+</div></div>
+</div>
+
+<center><h1><b><i>Some Glimpse Of Foundation</i></b></h1></center>
+<div class="row"> 
+  <div class="column">
+
+    <img src="/C:\Users\dell\Desktop\ngo/img1.jpg" style="width:100%"alt="img">
+    <img src="/C:\Users\dell\Desktop\ngo/img2.jpg" style="width:100%"alt="img">
+    <img src="/C:\Users\dell\Desktop\ngo/img3.jpg" style="width:100%"alt="img">
+    <img src="/C:\Users\dell\Desktop\ngo/img4.jpg" style="width:100%"alt="img">
+    <img src="/C:\Users\dell\Desktop\ngo/img8.jpg" style="width:100%"alt="img">
+    <img src="/C:\Users\dell\Desktop\ngo/img9.jpg" style="width:100%"alt="img">
+    <img src="/C:\Users\dell\Desktop\ngo/img33.jpg" style="width:100%"alt="img">
+<img src="/C:\Users\dell\Desktop\ngo/img29.jpg" style="width:100%"alt="img">
+
+
+  </div>
+  <div class="column">
+    <img src="/C:\Users\dell\Desktop\ngo/img11.jpg" style="width:100%" alt="img1">
+    <img src="/C:\Users\dell\Desktop\ngo/img12.jpg" style="width:100%" alt="img2">
+    <img src="/C:\Users\dell\Desktop\ngo/img5.jpg" style="width:100%"alt="img3">
+    <img src="/C:\Users\dell\Desktop\ngo/img6.jpg" style="width:100%"alt="img4">
+    <img src="/C:\Users\dell\Desktop\ngo/img14.jpg" style="width:100%"alt="img4">
+<img src="/C:\Users\dell\Desktop\ngo/img30.jpg" style="width:100%"alt="img5">
+  </div>  
+  <div class="column">
+
+    <img src="/C:\Users\dell\Desktop\ngo/img7.jpg" style="width:100%"alt="img6">
+    <img src="/C:\Users\dell\Desktop\ngo/img15.jpg" style="width:100%"alt="img7">
+    <img src="/C:\Users\dell\Desktop\ngo/img16.jpg" style="width:100%"alt="img8">
+    <img src="/C:\Users\dell\Desktop\ngo/img17.jpg" style="width:100%"alt="img9">
+    <img src="/C:\Users\dell\Desktop\ngo/img19.jpg" style="width:100%"alt="img10">
+    <img src="/C:\Users\dell\Desktop\ngo/img20.jpg" style="width:100%"alt="img11">
+    <img src="/C:\Users\dell\Desktop\ngo/img22.jpg" style="width:100%"alt="img12">
+  </div>
+  <div class="column">
+    <img src="/C:\Users\dell\Desktop\ngo/img23.jpg" style="width:100%"alt="img13">
+    <img src="/C:\Users\dell\Desktop\ngo/img24.jpg" style="width:100%"alt="img14">
+    <img src="/C:\Users\dell\Desktop\ngo/img25.jpg" style="width:100%"alt="img15">
+    <img src="/C:\Users\dell\Desktop\ngo/img26.jpg" style="width:100%"alt="img16">
+    <img src="/C:\Users\dell\Desktop\ngo/img27.jpg" style="width:100%"alt="img17">
+    <img src="/C:\Users\dell\Desktop\ngo/img28.jpg" style="width:100%"alt="img18">
+<img src="/C:\Users\dell\Desktop\ngo/img18.jpg" style="width:100%"alt="img19">
+  </div>
+</div>
+
+
+        
+                
+
+     
+
+        <footer>
+            <div class="container">
+                <center>
+                    Copyright © Learningspace.co.in. All Rights Reserved and Contact Us: 9885214884 / 9848545407 
+                </center>
+            </div>
+        </footer>
+    </body>
+</html>
